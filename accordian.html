@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple FAQ Accordion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .accordionItem {
+            background-color: #f1f3f5;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-header img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .accordion-content {
+            max-height: 0px;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 16px;
+            color: #333;
+            background-color: white;
+        }
+
+        .accordionItem.active .accordion-content {
+            max-height: 300px;
+            padding: 15px 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="title">Frequently Asked Questions By Customers!</h2>
+        <div class="accordionItem">
+            <div class="accordion-header">
+                <span>Can I place an order for online pickup?</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/748/748113.png" alt="plus icon" />
+            </div>
+            <div class="accordion-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eveniet quisquam ea rerum unde, saepe
+                voluptas temporibus nisi accusantium ut, quasi tempora sed dicta aliquid perspiciatis in vero cumque
+                animi.
+            </div>
+        </div>
+
+        <div class="accordionItem">
+            <div class="accordion-header">
+                <span>Are there any restrictions on the quantity of cannabis I can purchase?</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/748/748113.png" alt="plus icon" />
+            </div>
+            <div class="accordion-content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium soluta animi accusamus veritatis
+                sunt adipisci sit recusandae earum ratione aliquid reprehenderit sed, dolor expedita totam eligendi
+                neque excepturi exercitationem ullam.
+            </div>
+        </div>
+
+        <div class="accordionItem">
+            <div class="accordion-header">
+                <span>Do you sell Marijuana Edibles?</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/748/748113.png" alt="plus icon" />
+            </div>
+            <div class="accordion-content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque saepe minima rerum commodi ad iste
+                deleniti incidunt, omnis laborum voluptatibus, sint accusamus quam modi velit, fugiat unde sapiente
+                possimus accusantium!
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const items = document.querySelectorAll(".accordionItem");
+        console.log(items); // node list mil gai
+
+        items.forEach(item => {
+            const header = item.querySelector(".accordion-header");
+
+            header.addEventListener("click", () => {
+                const isOpen = item.classList.contains("active"); //check hr item ko koe class active hy kia 
+
+                items.forEach(n => n.classList.remove("active"));
+                if (!isOpen) {
+                    item.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>"
